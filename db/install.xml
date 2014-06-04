@@ -7,6 +7,9 @@
     <TABLE NAME="vocabulary" COMMENT="Defines vocabularies">
       <FIELDS>
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="shortname" TYPE="varchar" LENGTH="255" NOTNULL="true"/>
+        <FIELD NAME="name" TYPE="varchar" LENGTH="255" NOTNULL="true"/>
+        <FIELD NAME="weight" TYPE="int" LENGTH="10" NOTNULL="true"/>
       </FIELDS>
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
