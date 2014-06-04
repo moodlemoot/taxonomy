@@ -1,0 +1,2 @@
+$string['pluginname'] = 'Taxonomy';
+
