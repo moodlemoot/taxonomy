@@ -4,21 +4,26 @@
     xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
 >
   <TABLES>
-    <TABLE NAME="vocabulary" COMMENT="Defines vocabularies">
+    <TABLE NAME="vocabulary" COMMENT="Defines vocabularies.">
       <FIELDS>
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
-        <FIELD NAME="shortname" TYPE="varchar" LENGTH="255" NOTNULL="true"/>
-        <FIELD NAME="name" TYPE="varchar" LENGTH="255" NOTNULL="true"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true"/>
+        <FIELD NAME="shortname" TYPE="char" LENGTH="255" NOTNULL="true"/>
         <FIELD NAME="description" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Vocabulary description."/>
-        <FIELD NAME="weight" TYPE="int" LENGTH="10" NOTNULL="true"/>
+        <FIELD NAME="weight" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The weight of this vocabulary in relation to other vocabularies."/>
       </FIELDS>
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
       </KEYS>
     </TABLE>
-    <TABLE NAME="term" COMMENT="Defines terms">
+    <TABLE NAME="term" COMMENT="Defines terms.">
       <FIELDS>
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="vid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="The id of the vocabulary to which the term is assigned."/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true"/>
+        <FIELD NAME="shortname" TYPE="char" LENGTH="255" NOTNULL="true"/>
+        <FIELD NAME="description" TYPE="text" NOTNULL="false" COMMENT="Term description."/>
+        <FIELD NAME="weight" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The weight of this term in relation to other terms."/>
       </FIELDS>
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
