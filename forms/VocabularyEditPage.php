@@ -74,13 +74,12 @@ if ($form->is_cancelled() ) {
     echo $OUTPUT->header();
 
     if ( empty($vocabulary->id) ) {
-        echo $OUTPUT->heading('Créer un nouveau vocabulaire');
+        echo $OUTPUT->heading(get_string('createnewvocabulary', 'local_taxonomy'));
     } else {
-        echo $OUTPUT->heading('Modifier le vocabulaire ' . $vocabulary->name);
+        echo $OUTPUT->heading(get_string('modifyvocabulary', 'local_taxonomy') . $vocabulary->name);
     }
 
     $form->display();
     echo $OUTPUT->footer();
 }
 
-?>
