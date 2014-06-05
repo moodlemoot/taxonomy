@@ -1,5 +1,5 @@
 <?php
-	require('../../config.php');
+		require('../../config.php');
 	
 	require_login();
 	
@@ -42,7 +42,7 @@
 	echo html_writer::table($table);
 	
 	$add_new_url = new moodle_url('/local/taxonomy/forms/TermEditPage.php');
-	echo html_writer::link($add_new_url, 'Ajouter nouveau terme');
+	echo html_writer::link($add_new_url, 'Ajouter un nouveau terme');
 	
 	echo $OUTPUT->footer();
 ?>
