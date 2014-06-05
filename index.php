@@ -28,5 +28,5 @@
 	}
 
 	echo html_writer::table($table);
-	echo $output->footer();
+	echo $OUTPUT->footer();
 ?>
