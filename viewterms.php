@@ -6,8 +6,9 @@
 	$id = required_param('id', PARAM_INT); // Vocabulary id.
 	
 	$context = context_system::instance();
-    	$PAGE->set_context($context);	
+    $PAGE->set_context($context);
 	$PAGE->set_url('/local/taxonomy/viewterms.php');
+    $PAGE->set_pagelayout('standard');
 	
 	echo $OUTPUT->header();
 	echo $OUTPUT->heading(get_string('termtitle', 'local_taxonomy'));
