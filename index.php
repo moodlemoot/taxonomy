@@ -29,7 +29,7 @@
 		$actions[] = html_writer::link(new moodle_url('/local/taxonomy/toreplace.php'), 'Supprimer');
 		$table->data[] = array (
 			$id,
-			$record->name,
+			html_writer::link(new moodle_url( sprintf('/local/taxonomy/termsview.php?id=%d', $id)), $record->name),
 			$record->description,
 			$record->weight,
 			implode('<br/>', $actions)
