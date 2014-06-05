@@ -6,7 +6,7 @@
 	$id = required_param('id', PARAM_INT); // Vocabulary id.
 	
 	$context = context_system::instance();
-    $PAGE->set_context($context);	
+    	$PAGE->set_context($context);	
 	$PAGE->set_url('/local/taxonomy/viewterms.php');
 	
 	echo $OUTPUT->header();
@@ -24,7 +24,7 @@
 
 	$table->size = array('5%', '35%', '40%','5%', '5%', '10%');
 
-	$records = taxonomy_term_list($vid);
+	$records = taxonomy_term_list($id);
 	foreach ($records as $key => $record)	{
 		$id = $record->id;
 		$actions = array();
