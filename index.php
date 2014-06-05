@@ -1,16 +1,15 @@
 <?php
-  	require('../../config.php');
-	require_once('lib.php');
+	require('../../config.php');
 	
 	require_login();
+	
 	$context = context_system::instance();
     	$PAGE->set_context($context);	
 	$PAGE->set_url('/local/taxonomy/index.php');
 	
 	echo $OUTPUT->header();
 	echo $OUTPUT->heading('Vocabulary');
-		
-	$taxonomy_list = 
+		 
 	$table = new html_table();
 
 	$table->head = array();
@@ -34,5 +33,9 @@
 	}
 
 	echo html_writer::table($table);
-	echo $OUTPUT->footer();
+	
+	$add_new_url = new moodle_url('/local/taxonomy/toreplace.php');
+	//echo html_writer::link($url, 'Ajouter nouveau vocabulaire');
+	
+	echo $OUTPUT->footer(html_writer::link($add_new_url, 'Ajouter nouveau vocabulaire'));
 ?>
