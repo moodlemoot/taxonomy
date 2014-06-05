@@ -41,7 +41,7 @@ $string['deleteterm'] = 'Delete';
 $string['modifyterm'] = 'Modify';
 $string['termtitle'] = 'Term';
 $string['parentvocabulary'] = 'Vocabulary';
-
+$string['noTerms']='No terms found';
 
 /*  Errors  */
 

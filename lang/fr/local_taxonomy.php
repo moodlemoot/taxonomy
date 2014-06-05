@@ -41,6 +41,7 @@ $string['deleteterm'] = 'Supprimer';
 $string['modifyterm'] = 'Modifier';
 $string['termtitle'] = 'Termes';
 $string['parentvocabulary'] = 'Vocabulaire';
+$string['noTerms']='Aucune terme n\'a été trouvée';
 
 /* Errors */
 
