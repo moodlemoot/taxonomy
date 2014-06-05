@@ -33,7 +33,7 @@ $id = optional_param('id', 0, PARAM_INT); // Vocabulary id.
 
 $PAGE->set_url('/local/taxonomy/forms/VocabularyEditPage.php', array('id' => $id));
 $PAGE->set_pagelayout('standard');
-$PAGE->set_heading('Edit vocabulary');
+$PAGE->set_heading(get_string('editvocabulary', 'local_taxonomy'));
 
 require_once('./VocabularyEditForm.php');
 
