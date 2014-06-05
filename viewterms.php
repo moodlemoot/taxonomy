@@ -24,6 +24,7 @@
 	$table->size = array('5%', '35%', '40%', '5%', '10%');
 
 	$records = taxonomy_term_list($id);
+    if (!empty($records)) {
 	foreach ($records as $key => $record)	{
 		$id = $record->id;
 		$actions = array();
@@ -37,6 +38,15 @@
 			implode('<br/>', $actions)
 		);
 	}
+    } else {
+        $table->data[] = array (
+            '',
+            'Pas de liste',
+            '',
+            '',
+            ''
+        );
+    }
 	echo html_writer::table($table);
 	
 	$add_new_url = new moodle_url('/local/taxonomy/forms/TermEditPage.php');
