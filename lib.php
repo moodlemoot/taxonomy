@@ -22,11 +22,11 @@ function taxonomy_vocabulary_create($vocabulary) {
     global $DB;
 
     if (!isset($vocabulary->name)) {
-        throw new coding_exception('Missing vocabulary name in taxonomy_vocabulary_create().');
+        throw new coding_exception(get_string('missingvocabularyname','local_taxonomy'));
     }
 
     if (!isset($vocabulary->shortname)) {
-        throw new coding_exception('Missing vocabulary shortname in taxonomy_vocabulary_create().');
+        throw new coding_exception(get_string('missingvocabularyshortname','local_taxonomy'));
     }
 
     if (!isset($vocabulary->description)) {
@@ -104,11 +104,11 @@ function taxonomy_term_create($term) {
     global $DB;
 
     if (!isset($term->name)) {
-        throw new coding_exception('Missing term name in taxonomy_term_create().');
+        throw new coding_exception(get_string('missingtermname','local_taxonomy'));
     }
 
     if (!isset($term->shortname)) {
-        throw new coding_exception('Missing term shortname in taxonomy_term_create().');
+        throw new coding_exception(get_string('missingtermshortname','local_taxonomy'));
     }
 
     if (!isset($term->description)) {

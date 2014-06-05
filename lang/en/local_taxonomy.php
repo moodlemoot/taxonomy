@@ -1,5 +1,9 @@
 <?php 
+
+/*  Global  */
+
 $string['pluginname'] = 'Taxonomy';
+$string['navbartaxonomy'] = 'Taxonomy';
 
 /*  Vocabulary */
 
@@ -38,4 +42,11 @@ $string['modifyterm'] = 'Modify';
 $string['termtitle'] = 'Term';
 $string['parentvocabulary'] = 'Vocabulary';
 
-$string['navbartaxonomy'] = 'Taxonomy';
+
+/*  Errors  */
+
+$string['missingvocabularyname'] = 'Missing vocabulary name in taxonomy_vocabulary_create().';
+$string['missingvocabularyshortname'] = 'Missing vocabulary shortname in taxonomy_vocabulary_create().';
+$string['missingtermname'] = 'Missing term name in taxonomy_vocabulary_create().';
+$string['missingtermshortname'] = 'Missing term shortname in taxonomy_vocabulary_create().';
+
