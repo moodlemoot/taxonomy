@@ -98,7 +98,7 @@ class TermEditForm extends moodleform {
         $errors = parent::validation($data, $files);
 
         // Add field validation check for duplicate shortname.
-        if ($term= $DB->get_record('term', array('shortname' => $data['shortname']), '*', IGNORE_MULTIPLE)) {
+        if ($term= $DB->get_record('taxonomy_term', array('shortname' => $data['shortname']), '*', IGNORE_MULTIPLE)) {
             if (empty($data['id']) || $term->id != $data['id']) {
                 $errors['shortname'] = 'this shortmane is already used';
             }
