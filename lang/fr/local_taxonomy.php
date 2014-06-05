@@ -17,3 +17,4 @@ $string['vocabularyweight'] = 'Poids';
 $string['addnewvocabulary'] = 'Ajouter nouveau vocabulaire';
 $string['deletevocabulary'] = 'Supprimer';
 $string['modifyvocabulary'] = 'Modifier';
+$string['vocabularytitle'] = 'Vocabulaire';

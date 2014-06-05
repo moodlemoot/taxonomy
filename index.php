@@ -8,7 +8,7 @@
 	$PAGE->set_url('/local/taxonomy/index.php');
 	
 	echo $OUTPUT->header();
-	echo $OUTPUT->heading('Vocabulary');
+	echo $OUTPUT->heading(get_string('vocabularytitle', 'local_taxonomy'));
 		 
 	$table = new html_table();
 
