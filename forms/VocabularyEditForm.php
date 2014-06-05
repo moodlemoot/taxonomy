@@ -19,6 +19,7 @@
  *
  * @package local_taxonomy
  * @category forms
+ * @link http://docs.moodle.org/dev/Form_API
  * @copyright 2014 MoodleMootFr  
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
