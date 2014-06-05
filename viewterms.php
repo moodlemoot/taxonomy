@@ -44,7 +44,7 @@
     } else {
         $table->data[] = array (
             '',
-            get_string('noTerms','local_taxonomy'),
+            get_string('noterms','local_taxonomy'),
             '',
             '',
             ''
