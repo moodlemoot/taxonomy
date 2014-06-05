@@ -6,8 +6,9 @@
 	
 	$PAGE->set_url('/local/taxonomy/index.php');
 	echo $OUTPUT->header();
-	echo $OUTPUT->heading('-- TOREPLACE --');
+	echo $OUTPUT->heading('Vocabulary');
 		
+	$taxonomy_list = 
 	$table = new html_table();
 
 	$table->head = array();
@@ -15,16 +16,18 @@
 	$table->head[] = 'SHORTNAME';
 	$table->head[] = 'NAME';
 	$table->head[] = 'DESCRIPTION';
+	$table->head[] = 'WEIGHT';
 
-	$table->size = array('10%', '25%', '35%','30%');
+	$table->size = array('5%', '25%', '35%','30%', '5%');
 
-	$records = $records = taxonomy_vocabulary_list();
+	$records = taxonomy_vocabulary_list();
 	foreach ($records as $key => $record)	{
 		$table->data[] = array (
 			$record->id,
 			$record->shortname,
 			$record->name,
-			$record->description
+			$record->description,
+			$record->weight
 		);
 	}
 
