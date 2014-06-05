@@ -24,6 +24,17 @@
  */
 require_once '../../../config.php';
 
+$context = context_system::instance();
+$PAGE->set_context($context);	
+
+$id = optional_param('id', 0, PARAM_INT); // 0 mean create new.
+
+$urlparams = array('id' => $id);
+
+$PAGE->set_url('/local/taxonomy/forms/VocabularyEditPage.php', $urlparams);
+$PAGE->set_pagelayout('standard');
+$PAGE->set_heading('Edition Vocabulary');
+
 require_once('./VocabularyEditForm.php');
 
 $mform = new VocabularyEditForm();
@@ -44,3 +55,5 @@ if ($mform->is_cancelled() ) {
   //displays the form
   $mform->display();
 }
+
+?>
