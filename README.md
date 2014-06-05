@@ -1,7 +1,4 @@
 taxonomy
 ========
 
-Moodle Taxonomy module
-
--test
-- test
+# Moodle Taxonomy module
