@@ -17,7 +17,7 @@
 
 	$table->size = array('10%', '25%', '35%','30%');
 
-	$records = $DB->get_records('vocabulary', null, 'id DESC', '*');
+	$records = $records = taxonomy_vocabulary_list();
 	foreach ($records as $key => $record)	{
 		$table->data[] = array (
 			$record->id,
