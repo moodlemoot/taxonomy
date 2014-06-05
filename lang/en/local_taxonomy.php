@@ -14,3 +14,6 @@ $string['vocabularyshortname'] = 'Short Name';
 $string['vocabularyshortnameerror'] = 'this shortname is already used';
 $string['vocabularydescription'] = 'Description';
 $string['vocabularyweight'] = 'Weight';
+$string['addnewvocabulary'] = 'Add new vocabulary';
+$string['deletevocabulary'] = 'Delete';
+$string['modifyvocabulary'] = 'Modify';
