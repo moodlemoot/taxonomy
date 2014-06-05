@@ -41,7 +41,6 @@ $string['deleteterm'] = 'Delete';
 $string['modifyterm'] = 'Modify';
 $string['termtitle'] = 'Term';
 $string['parentvocabulary'] = 'Vocabulary';
-$string['noterms']='No terms found';
 
 /*  Errors  */
 
@@ -49,4 +48,6 @@ $string['missingvocabularyname'] = 'Missing vocabulary name in taxonomy_vocabula
 $string['missingvocabularyshortname'] = 'Missing vocabulary shortname in taxonomy_vocabulary_create().';
 $string['missingtermname'] = 'Missing term name in taxonomy_vocabulary_create().';
 $string['missingtermshortname'] = 'Missing term shortname in taxonomy_vocabulary_create().';
+$string['terms:notfound'] = 'No terms found';
+$string['term:notfound'] = 'Term not founded';
 
