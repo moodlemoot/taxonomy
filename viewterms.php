@@ -19,10 +19,9 @@
 	$table->head[] = 'NAME';
 	$table->head[] = 'DESCRIPTION';
 	$table->head[] = 'WEIGHT';
-	$table->head[] = 'STATUS';
 	$table->head[] = 'ACTIONS';
 
-	$table->size = array('5%', '35%', '40%','5%', '5%', '10%');
+	$table->size = array('5%', '35%', '40%', '5%', '10%');
 
 	$records = taxonomy_term_list($id);
 	foreach ($records as $key => $record)	{
@@ -35,7 +34,6 @@
 			$record->name,
 			$record->description,
 			$record->weight,
-			$record->status,
 			implode('<br/>', $actions)
 		);
 	}
