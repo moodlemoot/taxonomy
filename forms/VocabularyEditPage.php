@@ -41,7 +41,7 @@ $mform = new VocabularyEditForm();
 
 if ($id != 0)	{
 	$isadding = false;
-	$data = $DB->get_record('{vocabulary}', array('id' => $id), '*', MUST_EXIST);
+	$data = taxonomy_vocabulary_load($id);
 } else {
 	$isadding = true;
 	$data = new stdClass;
