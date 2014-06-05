@@ -28,7 +28,7 @@
 		$tid = $record->id;
 		$actions = array();
 		$actions[] = html_writer::link(new moodle_url( sprintf('/local/taxonomy/forms/TermEditPage.php?id=%d', $tid)), get_string('modifyterm', 'local_taxonomy'));
-		$actions[] = html_writer::link(new moodle_url( sprintf('/local/taxonomy/forms/TermDeletePage.php?id=%d', $tid), get_string('deleteterm', 'local_taxonomy'));
+		$actions[] = html_writer::link(new moodle_url( sprintf('/local/taxonomy/forms/TermDeletePage.php?id=%d', $tid)), get_string('deleteterm', 'local_taxonomy'));
 
 		$table->data[] = array (
 			$tid,
