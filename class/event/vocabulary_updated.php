@@ -41,7 +41,7 @@ defined('MOODLE_INTERNAL') || die();
  * @copyright  2014 moodlemootfr
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class updated_vocabulary extends \core\event\base {
+class vocabulary_updated extends \core\event\base {
 
     /**
      * Returns description of what happened.
