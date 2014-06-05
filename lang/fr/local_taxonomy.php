@@ -1,8 +1,12 @@
 <?php 
 
-/*  Vocabulary  */
+/*  Global  */
 
 $string['pluginname'] = 'Taxonomy';
+$string['navbartaxonomy'] = 'Taxonomie';
+
+/*  Vocabulary  */
+
 $string['eventvocabularycreated'] = 'Vocabulaire créé';
 $string['eventvocabularydeleted'] = 'Vocabulaire supprimé';
 $string['eventvocabularyupdated'] = 'Vocabulaire modifié';
@@ -38,4 +42,10 @@ $string['modifyterm'] = 'Modifier';
 $string['termtitle'] = 'Termes';
 $string['parentvocabulary'] = 'Vocabulaire';
 
-$string['navbartaxonomy'] = 'Taxonomie';
+/* Errors */
+
+$string['missingvocabularyname'] = 'Nom de vocabulaire manquant dans taxonomy_vocabulary_create().';
+$string['missingvocabularyshortname'] = 'Nom court de vocabulaire manquant dans taxonomy_vocabulary_create().';
+$string['missingtermname'] = 'Nom du terme manquant dans taxonomy_vocabulary_create().';
+$string['missingtermshortname'] = 'Nom court du terme manquant dans taxonomy_vocabulary_create().';
+
