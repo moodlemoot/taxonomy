@@ -34,7 +34,7 @@ require_once("$CFG->libdir/formslib.php");
  *
  * @author moodlemootfr 2014
  */
-class VocabularyCreateForm extends moodleform {
+class VocabularyEditForm extends moodleform {
     //Add elements to form
     public function definition() {
         global $CFG;
