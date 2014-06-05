@@ -11,7 +11,7 @@
 	echo $OUTPUT->heading('Vocabulary');
 		 
 	$table = new html_table();
-	$table->attributes['class'] = 'generaltable';
+	$table->attributes['class'] = 'generaltable quizsummaryofattempt boxaligncenter';
 
 	$table->head = array();
 	$table->head[] = 'ID';
