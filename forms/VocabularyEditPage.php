@@ -69,7 +69,7 @@ if ($form->is_cancelled() ) {
 } else {
     $site = get_site();
     $PAGE->set_title($site->fullname);
-    $PAGE->navbar->add('Taxonomy', new moodle_url('/local/taxonomy/index.php'));
+    $PAGE->navbar->add(get_string('navbartaxonomy', 'local_taxonomy'), new moodle_url('/local/taxonomy/index.php'));
 
     echo $OUTPUT->header();
 
