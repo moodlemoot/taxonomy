@@ -14,13 +14,12 @@
 
 	$table->head = array();
 	$table->head[] = 'ID';
-	$table->head[] = 'SHORTNAME';
 	$table->head[] = 'NAME';
 	$table->head[] = 'DESCRIPTION';
 	$table->head[] = 'WEIGHT';
 	$table->head[] = 'ACTIONS';
 
-	$table->size = array('5%', '20%', '30%','30%', '5%', '10%');
+	$table->size = array('5%', '40%','40%', '5%', '10%');
 
 	$records = taxonomy_vocabulary_list();
 	foreach ($records as $key => $record)	{
@@ -30,7 +29,6 @@
 		$actions[] = html_writer::link(new moodle_url('/local/taxonomy/toreplace.php'), 'Supprimer');
 		$table->data[] = array (
 			$id,
-			$record->shortname,
 			$record->name,
 			$record->description,
 			$record->weight,
