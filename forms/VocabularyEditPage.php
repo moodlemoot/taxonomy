@@ -39,6 +39,15 @@ require_once('./VocabularyEditForm.php');
 
 $mform = new VocabularyEditForm();
 
+if ($id != 0)	{
+	$isadding = false;
+	$data = $DB->get_record('vocabulary', array('id' => $id), '*', MUST_EXIST);
+} else {
+	$isadding = true;
+	$data = new stdClass;
+	$data->id = 0;
+}
+
 //Form processing and displaying is done here
 if ($mform->is_cancelled() ) {
     //Handle form cancel operation, if cancel button is present on form
@@ -50,7 +59,7 @@ if ($mform->is_cancelled() ) {
   // or on the first display of the form.
  
   //Set default data (if any)
-      $mform->set_data($mform);
+      $mform->set_data($data);
 
   //displays the form
   $mform->display();
