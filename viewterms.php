@@ -1,5 +1,5 @@
 <?php
-		require('../../config.php');
+	require('../../config.php');
 	
 	require_login();
 	
@@ -25,12 +25,13 @@
 
 	$records = taxonomy_term_list($id);
 	foreach ($records as $key => $record)	{
-		$id = $record->id;
+		$tid = $record->id;
 		$actions = array();
-		$actions[] = html_writer::link(new moodle_url( sprintf('/local/taxonomy/forms/TermEditPage.php?id=%d', $id)), get_string('modifyterm', 'local_taxonomy'));
-		$actions[] = html_writer::link(new moodle_url('/local/taxonomy/toreplace.php'), get_string('deleteterm', 'local_taxonomy'));
+		$actions[] = html_writer::link(new moodle_url( sprintf('/local/taxonomy/forms/TermEditPage.php?id=%d', $tid)), get_string('modifyterm', 'local_taxonomy'));
+		$actions[] = html_writer::link(new moodle_url( sprintf('/local/taxonomy/forms/TermDeletePage.php?id=%d', $tid), get_string('deleteterm', 'local_taxonomy'));
+
 		$table->data[] = array (
-			$id,
+			$tid,
 			$record->name,
 			$record->description,
 			$record->weight,
