@@ -26,8 +26,26 @@
 // List of observers.
 $observers = array(
 
-    array(
+    /*array(
         'eventname' => '\core\event\course_deleted',
         'callback'  => 'local_taxonomy_observer::course_deleted',
     ),
+    //exemple pour ecouter les evenement interne au module
+    array (
+                'eventname' => '\mod_evanum\event\evanum_created',
+                'includefile' => '/mod/evanum/locallib.php',
+                'callback' => 'evanum_created_handler',
+                'priority' => 50,
+                'internal' => false
+    ),
+    array (
+                'eventname' => '\local_taxonomy\event\evanum_updated',
+                'includefile' => '/mod/evanum/locallib.php',
+                'callback' => 'evanum_updated_handler',
+                'priority' => 50,
+                'internal' => false
+    )
+    
+    
+    
 );
