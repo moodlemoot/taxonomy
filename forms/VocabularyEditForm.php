@@ -85,7 +85,8 @@ class VocabularyEditForm extends moodleform {
         $errors = parent::validation($data, $files);
 
         // Add field validation check for duplicate shortname.
-        if ($vocabulary= $DB->get_record('vocabulary', array('shortname' => $data['shortname']), '*', IGNORE_MULTIPLE)) {
+        if ($vocabulary= $DB->get_record(
+            'taxonomy_vocabulary', array('shortname' => $data['shortname']), '*', IGNORE_MULTIPLE)) {
             if (empty($data['id']) || $vocabulary->id != $data['id']) {
                 $errors['shortname'] = 'this shortmane is already used';
             }
