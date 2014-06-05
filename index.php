@@ -35,7 +35,7 @@
 	echo html_writer::table($table);
 	
 	$add_new_url = new moodle_url('/local/taxonomy/toreplace.php');
-	//echo html_writer::link($url, 'Ajouter nouveau vocabulaire');
+	echo html_writer::link($add_new_url, 'Ajouter nouveau vocabulaire');
 	
-	echo $OUTPUT->footer(html_writer::link($add_new_url, 'Ajouter nouveau vocabulaire'));
+	echo $OUTPUT->footer();
 ?>
