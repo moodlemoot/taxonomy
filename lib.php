@@ -1,7 +1,15 @@
 <?php
 
+function taxonomy_vocabulary_list() {
+    global $DB;
+
+    return $DB->get_records('vocabulary');
+}
+
 function taxonomy_vocabulary_load($id) {
-    return $DB->get_record('taxonomy_vocabulary', array('id' => $id));
+    global $DB;
+
+    return $DB->get_record('vocabulary', array('id' => $id));
 }
 
 function taxonomy_vocabulary_create($vocabulary) {
@@ -68,10 +76,21 @@ function taxonomy_vocabulary_delete($vocabulary) {
     return $result;
 }
 
+function taxonomy_term_list($vid = NULL) {
+    global $DB;
+
+    if ( is_null($vid) ) {
+        return $DB->get_records('term');
+    }
+    else {
+        return $DB->get_records('term', array('vid' => $vid));
+    }
+}
+
 function taxonomy_term_load($id) {
     global $DB;
 
-    return $DB->get_record('taxonomy_vocabulary', array('id' => $id));
+    return $DB->get_record('term', array('id' => $id));
 }
 
 function taxonomy_term_create($term) {
