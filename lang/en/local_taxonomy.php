@@ -1,3 +1,4 @@
+<?php 
 $string['pluginname'] = 'Taxonomy';
 $string['eventvocabularycreated'] = 'Vocabulaire crée';
 $string['eventvocabularydeleted'] = 'Vocabulaire supprimé';
