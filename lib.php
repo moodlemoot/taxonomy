@@ -3,7 +3,7 @@
 function taxonomy_vocabulary_list() {
     global $DB;
 
-    return $DB->get_records('vocabulary');
+    return $DB->get_records_sql('SELECT * FROM {vocabulary} ORDER by weight desc');
 }
 
 function taxonomy_vocabulary_load($id) {
@@ -76,15 +76,10 @@ function taxonomy_vocabulary_delete($vocabulary) {
     return $result;
 }
 
-function taxonomy_term_list($vid = NULL) {
+function taxonomy_term_list($vid) {
     global $DB;
 
-    if ( is_null($vid) ) {
-        return $DB->get_records('term');
-    }
-    else {
-        return $DB->get_records('term', array('vid' => $vid));
-    }
+    return $DB->get_records_sql('SELECT * FROM {term} WHERE vid = ? ORDER by weight desc', array($vid));
 }
 
 function taxonomy_term_load($id) {
