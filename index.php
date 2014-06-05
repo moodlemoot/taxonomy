@@ -11,6 +11,7 @@
 	echo $OUTPUT->heading('Vocabulary');
 		 
 	$table = new html_table();
+	$table->attributes['class'] = 'generaltable';
 
 	$table->head = array();
 	$table->head[] = 'ID';
@@ -21,7 +22,6 @@
 	$table->head[] = 'ACTIONS';
 
 	$table->size = array('5%', '20%', '30%','30%', '5%', '10%');
-	$table->attributes['class'] = 'generaltable mod_index';
 
 	$records = taxonomy_vocabulary_list();
 	foreach ($records as $key => $record)	{
