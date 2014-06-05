@@ -25,8 +25,19 @@
 
 require_once('../../../config.php');
 require_once('../lib.php');
-require_once('./VocabularyEditForm.php');
 
+$context = context_system::instance();
+$PAGE->set_context($context);
+
+$id = optional_param('id', 0, PARAM_INT); // 0 mean create new.
+
+$urlparams = array('id' => $id);
+
+$PAGE->set_url('/local/taxonomy/forms/VocabularyEditPage.php', $urlparams);
+$PAGE->set_pagelayout('standard');
+$PAGE->set_heading('Edition Vocabulary');
+
+require_once('./VocabularyEditForm.php');
 
 $id = optional_param('id', 0, PARAM_INT); // Vocabulary id.
 
@@ -47,9 +58,10 @@ if ($form->is_cancelled() ) {
 } else if ($data = $form->get_data()) {
 
     if ( empty($vocabulary->id) ) {
-        // In creating the course.
+        // create
         $vocabulary = taxonomy_vocabulary_create($data);
     } else {
+        // edit
         $vocabulary = taxonomy_vocabulary_update($data);
     }
 
@@ -58,7 +70,6 @@ if ($form->is_cancelled() ) {
     redirect($url);
 
 } else {
-
     $site = get_site();
     $PAGE->set_title($site->fullname);
     $PAGE->set_heading('Taxonomy');
@@ -76,3 +87,5 @@ if ($form->is_cancelled() ) {
     $form->display();
     echo $OUTPUT->footer();
 }
+
+?>

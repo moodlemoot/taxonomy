@@ -1,5 +1,5 @@
 <?php
-	require('../../config.php');
+		require('../../config.php');
 	
 	require_login();
 	
@@ -11,7 +11,6 @@
 	echo $OUTPUT->heading('Vocabulary');
 		 
 	$table = new html_table();
-	$table->attributes['class'] = 'generaltable quizsummaryofattempt boxaligncenter';
 
 	$table->head = array();
 	$table->head[] = 'ID';
@@ -25,11 +24,12 @@
 
 	$records = taxonomy_vocabulary_list();
 	foreach ($records as $key => $record)	{
+		$id = $record->id;
 		$actions = array();
-		$actions[] = html_writer::link(new moodle_url('/local/taxonomy/toreplace.php'), 'Modifier');
+		$actions[] = html_writer::link(new moodle_url( sprintf('/local/taxonomy/forms/VocabularyEditPage.php?id=%d', $id)), 'Modifier');
 		$actions[] = html_writer::link(new moodle_url('/local/taxonomy/toreplace.php'), 'Supprimer');
 		$table->data[] = array (
-			$record->id,
+			$id,
 			$record->shortname,
 			$record->name,
 			$record->description,
@@ -39,8 +39,9 @@
 	}
 	echo html_writer::table($table);
 	
-	$add_new_url = new moodle_url('/local/taxonomy/toreplace.php');
+	$add_new_url = new moodle_url('/local/taxonomy/forms/VocabularyEditPage.php');
 	echo html_writer::link($add_new_url, 'Ajouter nouveau vocabulaire');
 	
 	echo $OUTPUT->footer();
+
 ?>
