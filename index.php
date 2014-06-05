@@ -4,6 +4,7 @@
 	
 	require_login();
 	
+	$PAGE->set_url('/local/taxonomy/index.php');
 	echo $OUTPUT->header();
 	echo $OUTPUT->heading('-- TOREPLACE --');
 		
