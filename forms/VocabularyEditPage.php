@@ -19,29 +19,68 @@
  *
  * @package local_taxonomy
  * @category forms
+<<<<<<< HEAD
  * @link http://docs.moodle.org/dev/Form_API
  * @copyright 2014 MoodleMootFr  
+=======
+ * @copyright 2014 MoodleMootFr
+>>>>>>> 2ab04809efa15a661eddf2feea1c6eb9fea0a746
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-require_once '../../../config.php';
+
+require_once('../../../config.php');
+require_once('../lib.php');
+
+$context = context_system::instance();
+$PAGE->set_context($context);
+
+$id = optional_param('id', 0, PARAM_INT); // Vocabulary id.
+
+$PAGE->set_url('/local/taxonomy/forms/VocabularyEditPage.php', array('id' => $id));
+$PAGE->set_pagelayout('standard');
+$PAGE->set_heading('Edit vocabulary');
 
 require_once('./VocabularyEditForm.php');
 
-$mform = new VocabularyEditForm();
+$vocabulary = taxonomy_vocabulary_load($id);
+
+$form = new VocabularyEditForm(NULL, array('vocabulary'=>$vocabulary));
 
 //Form processing and displaying is done here
-if ($mform->is_cancelled() ) {
-    //Handle form cancel operation, if cancel button is present on form
-    
-} else if ($data = $mform->get_data()) {
-  
-} else {
-  // this branch is executed if the form is submitted but the data doesn't validate and the form should be redisplayed
-  // or on the first display of the form.
- 
-  //Set default data (if any)
-      $mform->set_data($mform);
+if ($form->is_cancelled() ) {
 
-  //displays the form
-  $mform->display();
+    //Handle form cancel operation, if cancel button is present on form
+    $url = new moodle_url($CFG->wwwroot.'/local/taxonomy/index.php');
+    redirect($url);
+
+} else if ($data = $form->get_data()) {
+
+    if ( empty($vocabulary->id) ) {
+        // create
+        $vocabulary = taxonomy_vocabulary_create($data);
+    } else {
+        // edit
+        $vocabulary = taxonomy_vocabulary_update($data);
+    }
+
+    $url = new moodle_url("$CFG->wwwroot/local/taxonomy/index.php");
+    redirect($url);
+
+} else {
+    $site = get_site();
+    $PAGE->set_title($site->fullname);
+    $PAGE->navbar->add('Taxonomy', new moodle_url('/local/taxonomy/index.php'));
+
+    echo $OUTPUT->header();
+
+    if ( empty($vocabulary->id) ) {
+        echo $OUTPUT->heading('Créer un nouveau vocabulaire');
+    } else {
+        echo $OUTPUT->heading('Modifier le vocabulaire ' . $vocabulary->name);
+    }
+
+    $form->display();
+    echo $OUTPUT->footer();
 }
+
+?>
