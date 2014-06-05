@@ -25,8 +25,8 @@
 	foreach ($records as $key => $record)	{
 		$id = $record->id;
 		$actions = array();
-		$actions[] = html_writer::link(new moodle_url( sprintf('/local/taxonomy/forms/VocabularyEditPage.php?id=%d', $id)), 'Modifier');
-		$actions[] = html_writer::link(new moodle_url('/local/taxonomy/toreplace.php'), 'Supprimer');
+		$actions[] = html_writer::link(new moodle_url( sprintf('/local/taxonomy/forms/VocabularyEditPage.php?id=%d', $id)), get_string('modifyvocabulary', 'local_taxonomy'));
+		$actions[] = html_writer::link(new moodle_url('/local/taxonomy/toreplace.php'), get_string('deletevocabulary', 'local_taxonomy'));
 		$table->data[] = array (
 			$id,
 			html_writer::link(new moodle_url( sprintf('/local/taxonomy/viewterms.php?id=%d', $id)), $record->name),
@@ -38,7 +38,7 @@
 	echo html_writer::table($table);
 	
 	$add_new_url = new moodle_url('/local/taxonomy/forms/VocabularyEditPage.php');
-	echo html_writer::link($add_new_url, 'Ajouter nouveau vocabulaire');
+	echo html_writer::link($add_new_url, get_string('addnewvocabulary', 'local_taxonomy'));
 	
 	echo $OUTPUT->footer();
 
