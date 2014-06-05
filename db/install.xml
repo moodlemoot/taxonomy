@@ -29,5 +29,15 @@
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
       </KEYS>
     </TABLE>
+    <TABLE NAME="taxonomy_term_data">
+      <FIELDS>
+        <FIELD NAME="term_id" TYPE="int" LENGTH="10" NOTNULL="true"/>
+        <FIELD NAME="instance_id" TYPE="int" LENGTH="10" NOTNULL="true"/>
+        <FIELD NAME="component" TYPE="char" LENGTH="255" NOTNULL="true"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="term_id,instance_id"/>
+      </KEYS>
+    </TABLE>
   </TABLES>
 </XMLDB>
