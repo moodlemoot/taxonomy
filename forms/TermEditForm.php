@@ -49,19 +49,19 @@ class TermEditForm extends moodleform {
         foreach($data as $vocabulary){
             $vocabularies[$vocabulary->id] = $vocabulary->name;
         }
-        $mform->addElement('select','vid','Vocabulaire', $vocabularies);
+        $mform->addElement('select','vid',get_string('parentvocabulary', 'local_taxonomy'), $vocabularies);
         $mform->setType('vid', PARAM_INT);
         $mform->addRule('vid', get_string('error'), 'required');
         if(!empty($vid)){
             $mform->setDefault('vid', $vid);
         }
 
-        $mform->addElement('text', 'name', 'Nom'); // Add elements to your form
+        $mform->addElement('text', 'name', get_string('termname', 'local_taxonomy')); // Add elements to your form
         $mform->setType('name', PARAM_TEXT);                   //Set type of element
         $mform->addRule('name', get_string('error'), 'required', 'extraruledata', 'server', false, false);
         $mform->addRule('name', get_string('error'), 'maxlength', '255', 'server', false, false);
 
-        $mform->addElement('text', 'shortname', 'Nom court'); // Add elements to your form
+        $mform->addElement('text', 'shortname', get_string('termshortname', 'local_taxonomy')); // Add elements to your form
         $mform->setType('shortname', PARAM_TEXT);                   //Set type of element
         $mform->addRule('shortname', get_string('error'), 'required', 'extraruledata', 'server', false, false);
         $mform->setType('shortname', PARAM_TEXT);                   //Set type of element
@@ -69,7 +69,7 @@ class TermEditForm extends moodleform {
         // doit etre unique
 
 
-        $mform->addElement('textarea', 'description', 'Description', 'wrap="virtual" rows="10" cols="50"');
+        $mform->addElement('textarea', 'description', get_string('termdescription', 'local_taxonomy'), 'wrap="virtual" rows="10" cols="50"');
         $mform->setType('description', PARAM_TEXT);                   //Set type of element
 
         //tableau contenant le poids du terme
@@ -78,7 +78,7 @@ class TermEditForm extends moodleform {
             $array_weight[$cpt] = $cpt;
         }
 
-        $mform->addElement('select', 'weight', 'Poids', $array_weight);
+        $mform->addElement('select', 'weight', get_string('termweight', 'local_taxonomy'), $array_weight);
         $mform->setType('weight', PARAM_INT);
         $mform->setDefault('weight', 0);
 
@@ -100,7 +100,7 @@ class TermEditForm extends moodleform {
         // Add field validation check for duplicate shortname.
         if ($term= $DB->get_record('taxonomy_term', array('shortname' => $data['shortname']), '*', IGNORE_MULTIPLE)) {
             if (empty($data['id']) || $term->id != $data['id']) {
-                $errors['shortname'] = 'this shortmane is already used';
+                $errors['shortname'] = get_string('termshortnameerror', 'local_taxonomy');
             }
         }
 

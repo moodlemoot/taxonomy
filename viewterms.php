@@ -1,5 +1,5 @@
 <?php
-		require('../../config.php');
+	require('../../config.php');
 	
 	require_login();
 	
@@ -10,7 +10,7 @@
 	$PAGE->set_url('/local/taxonomy/viewterms.php');
 	
 	echo $OUTPUT->header();
-	echo $OUTPUT->heading('Terms');
+	echo $OUTPUT->heading(get_string('termtitle', 'local_taxonomy'));
 		 
 	$table = new html_table();
 
@@ -26,12 +26,13 @@
 	$records = taxonomy_term_list($id);
     if (!empty($records)) {
 	foreach ($records as $key => $record)	{
-		$id = $record->id;
+		$tid = $record->id;
 		$actions = array();
-		$actions[] = html_writer::link(new moodle_url( sprintf('/local/taxonomy/forms/TermEditPage.php?id=%d', $id)), 'Modifier');
-		$actions[] = html_writer::link(new moodle_url('/local/taxonomy/toreplace.php'), 'Supprimer');
+		$actions[] = html_writer::link(new moodle_url( sprintf('/local/taxonomy/forms/TermEditPage.php?id=%d', $tid)), get_string('modifyterm', 'local_taxonomy'));
+		$actions[] = html_writer::link(new moodle_url( sprintf('/local/taxonomy/forms/TermDeletePage.php?id=%d', $tid), get_string('deleteterm', 'local_taxonomy'));
+
 		$table->data[] = array (
-			$id,
+			$tid,
 			$record->name,
 			$record->description,
 			$record->weight,
@@ -50,7 +51,7 @@
 	echo html_writer::table($table);
 	
 	$add_new_url = new moodle_url('/local/taxonomy/forms/TermEditPage.php');
-	echo html_writer::link($add_new_url, 'Ajouter un nouveau terme');
+	echo html_writer::link($add_new_url, get_string('addnewterm', 'local_taxonomy'));
 	
 	echo $OUTPUT->footer();
 ?>

@@ -26,7 +26,8 @@
 		$id = $record->id;
 		$actions = array();
 		$actions[] = html_writer::link(new moodle_url( sprintf('/local/taxonomy/forms/VocabularyEditPage.php?id=%d', $id)), get_string('modifyvocabulary', 'local_taxonomy'));
-		$actions[] = html_writer::link(new moodle_url('/local/taxonomy/toreplace.php'), get_string('deletevocabulary', 'local_taxonomy'));
+		$actions[] = html_writer::link(new moodle_url( sprintf('/local/taxonomy/forms/VocabularyDeletePage.php?id=%d', $id)), get_string('deletevocabulary', 'local_taxonomy'));
+
 		$table->data[] = array (
 			$id,
 			html_writer::link(new moodle_url( sprintf('/local/taxonomy/viewterms.php?id=%d', $id)), $record->name),
