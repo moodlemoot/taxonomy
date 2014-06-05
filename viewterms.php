@@ -9,6 +9,7 @@
     $PAGE->set_context($context);
 	$PAGE->set_url('/local/taxonomy/viewterms.php');
     $PAGE->set_pagelayout('standard');
+    $PAGE->navbar->add(get_string('navbartaxonomy','local_taxonomy'), new moodle_url('/local/taxonomy/index.php'));
 	
 	echo $OUTPUT->header();
 	echo $OUTPUT->heading(get_string('termtitle', 'local_taxonomy'));
