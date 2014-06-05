@@ -1,11 +1,11 @@
 <?php 
 $string['pluginname'] = 'Taxonomy';
-$string['eventvocabularycreated'] = 'Vocabulaire créé';
-$string['eventvocabularydeleted'] = 'Vocabulaire supprimé';
-$string['eventvocabularyupdated'] = 'Vocabulaire modifié';
-$string['eventtermcreated'] = 'Terme créé';
-$string['eventtermdeleted'] = 'Terme supprimé';
-$string['eventtermupdated'] = 'Terme modifié';
-$string['createnewvocabulary'] = 'Créer un nouveau vocabulaire';
-$string['modifyvocabulary'] = 'Modifier le vocabulaire ';
-$string['editvocabulary'] = 'Edition du vocabulaire';
+$string['eventvocabularycreated'] = 'Vocabulary created';
+$string['eventvocabularydeleted'] = 'Vocabulary deleted';
+$string['eventvocabularyupdated'] = 'Vocabulary modified';
+$string['eventtermcreated'] = 'Term created';
+$string['eventtermdeleted'] = 'Term deleted';
+$string['eventtermupdated'] = 'Term modified';
+$string['createnewvocabulary'] = 'Create new vocabulary';
+$string['modifyvocabulary'] = 'Modify vocabulary ';
+$string['editvocabulary'] = 'Edit vocabulary';
