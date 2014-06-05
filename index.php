@@ -18,20 +18,24 @@
 	$table->head[] = 'NAME';
 	$table->head[] = 'DESCRIPTION';
 	$table->head[] = 'WEIGHT';
+	$table->head[] = 'ACTIONS';
 
-	$table->size = array('5%', '25%', '35%','30%', '5%');
+	$table->size = array('5%', '20%', '30%','30%', '5%', '10%');
 
 	$records = taxonomy_vocabulary_list();
 	foreach ($records as $key => $record)	{
+		$actions = array();
+		$actions[] = html_writer::link(new moodle_url('/local/taxonomy/toreplace.php'), 'Modifier');
+		$actions[] = html_writer::link(new moodle_url('/local/taxonomy/toreplace.php'), 'Supprimer');
 		$table->data[] = array (
 			$record->id,
 			$record->shortname,
 			$record->name,
 			$record->description,
-			$record->weight
+			$record->weight,
+			implode('<br/>', $actions)
 		);
 	}
-
 	echo html_writer::table($table);
 	
 	$add_new_url = new moodle_url('/local/taxonomy/toreplace.php');
