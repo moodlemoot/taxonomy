@@ -41,7 +41,7 @@ $mform = new VocabularyEditForm();
 
 if ($id != 0)	{
 	$isadding = false;
-	$data = $DB->get_record('vocabulary', array('id' => $id), '*', MUST_EXIST);
+	$data = $DB->get_record('mdl_vocabulary', array('id' => $id), '*', MUST_EXIST);
 } else {
 	$isadding = true;
 	$data = new stdClass;
