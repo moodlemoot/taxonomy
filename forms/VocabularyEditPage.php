@@ -19,28 +19,60 @@
  *
  * @package local_taxonomy
  * @category forms
- * @copyright 2014 MoodleMootFr  
+ * @copyright 2014 MoodleMootFr
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-require_once '../../../config.php';
 
+require_once('../../../config.php');
+require_once('../lib.php');
 require_once('./VocabularyEditForm.php');
 
-$mform = new VocabularyEditForm();
+
+$id = optional_param('id', 0, PARAM_INT); // Vocabulary id.
+
+$PAGE->set_pagelayout('admin');
+$PAGE->set_url('/local/taxonomy/forms/VocabularyEditPage.php', array('id' => $id) );
+
+$vocabulary = taxonomy_vocabulary_load($id);
+
+$form = new VocabularyEditForm(NULL, array('vocabulary'=>$vocabulary));
 
 //Form processing and displaying is done here
-if ($mform->is_cancelled() ) {
-    //Handle form cancel operation, if cancel button is present on form
-    
-} else if ($data = $mform->get_data()) {
-  
-} else {
-  // this branch is executed if the form is submitted but the data doesn't validate and the form should be redisplayed
-  // or on the first display of the form.
- 
-  //Set default data (if any)
-      $mform->set_data($mform);
+if ($form->is_cancelled() ) {
 
-  //displays the form
-  $mform->display();
+    //Handle form cancel operation, if cancel button is present on form
+    $url = new moodle_url($CFG->wwwroot.'/local/taxonomy/index.php');
+    redirect($url);
+
+} else if ($data = $form->get_data()) {
+
+    if ( empty($vocabulary->id) ) {
+        // In creating the course.
+        $vocabulary = taxonomy_vocabulary_create($data);
+    } else {
+        $vocabulary = taxonomy_vocabulary_update($data);
+    }
+
+    $url = new moodle_url("$CFG->wwwroot/local/taxonomy/index.php");
+
+    redirect($url);
+
+} else {
+
+    $site = get_site();
+    $PAGE->set_title($site->fullname);
+    $PAGE->set_heading('Taxonomy');
+    $PAGE->navbar->add('Taxonomy', new moodle_url('/local/taxonomy/index.php'));
+    //$PAGE->navbar->add('Taxonomy', new moodle_url('/local/taxonomy/index.php'));
+
+    echo $OUTPUT->header();
+
+    if ( empty($vocabulary->id) ) {
+        echo $OUTPUT->heading('Créer un nouveau vocabulaire');
+    } else {
+        echo $OUTPUT->heading('Modifier le vocabulaire ' . $vocabulary->name);
+    }
+
+    $form->display();
+    echo $OUTPUT->footer();
 }

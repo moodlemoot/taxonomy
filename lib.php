@@ -6,6 +6,12 @@ function taxonomy_vocabulary_list() {
     return $DB->get_records_sql('SELECT * FROM {taxonomy_vocabulary} ORDER by weight desc');
 }
 
+/**
+ * Load vocabulary by id
+ *
+ * @param int $id
+ * @return mixed returns vocabulary database record or false if none found
+ */
 function taxonomy_vocabulary_load($id) {
     global $DB;
 
@@ -34,11 +40,13 @@ function taxonomy_vocabulary_create($vocabulary) {
     $vocabulary->id = $DB->insert_record('taxonomy_vocabulary', $vocabulary);
 
     // trigger event
+    /*
     $event = \local\taxonomy\vocabulary_created::create(array(
         'objectid' => $vocabulary->id,
     ));
     $event->add_record_snapshot('taxonomy_vocabulary', $vocabulary);
     $event->trigger();
+    */
 
     return $vocabulary->id;
 }
@@ -49,11 +57,13 @@ function taxonomy_vocabulary_update($vocabulary) {
     $result = $DB->update_record('taxonomy_vocabulary', $vocabulary);
 
     // trigger event
+    /*
     $event = \local\taxonomy\vocabulary_updated::create(array(
         'objectid' => $vocabulary->id,
     ));
     $event->add_record_snapshot('taxonomy_vocabulary', $vocabulary);
     $event->trigger();
+    */
 
     return $result;
 }
@@ -67,11 +77,13 @@ function taxonomy_vocabulary_delete($vocabulary) {
     $result = $DB->delete_records('taxonomy_vocabulary', array('id' => $vocabulary->id));
 
     // trigger event
+    /*
     $event = \local\taxonomy\vocabulary_deleted::create(array(
         'objectid' => $vocabulary->id,
     ));
     $event->add_record_snapshot('taxonomy_vocabulary', $vocabulary);
     $event->trigger();
+    */
 
     return $result;
 }
@@ -110,11 +122,13 @@ function taxonomy_term_create($term) {
     $term->id = $DB->insert_record('taxonomy_term', $term);
 
     // trigger event
+    /*
     $event = \local\taxonomy\term_created::create(array(
         'objectid' => $term->id,
     ));
     $event->add_record_snapshot('taxonomy_term', $term);
     $event->trigger();
+    */
 
     return $term->id;
 }
@@ -125,11 +139,13 @@ function taxonomy_term_update($term) {
     $result = $DB->update_record('taxonomy_term', $term);
 
     // trigger event
+    /*
     $event = \local\taxonomy\term_updated::create(array(
         'objectid' => $term->id,
     ));
     $event->add_record_snapshot('taxonomy_term', $term);
     $event->trigger();
+    */
 
     return $result;
 }
@@ -140,11 +156,13 @@ function taxonomy_term_delete($term) {
     $result = $DB->delete_records('taxonomy_term', array('id' => $term->id));
 
     // trigger event
+    /*
     $event = \local\taxonomy\term_deleted::create(array(
         'objectid' => $term->id,
     ));
     $event->add_record_snapshot('taxonomy_term', $term);
     $event->trigger();
+    */
 
     return $result;
 }
