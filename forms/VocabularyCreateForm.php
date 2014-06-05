@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Forum event handler definition.
+ * Create vocabulary form definition.
  *
  * @package local_taxonomy
  * @category forms
@@ -23,20 +23,18 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-error_reporting(E_ALL);
-
 require_once '../../../config.php';
+
 //moodleform is defined in formslib.php
-//require_once("../../../lib/formslib.php");
 require_once("$CFG->libdir/formslib.php");
 
 
 /**
- * Description of VocabularyInsert
+ * Description of VocabularyCreate
  *
  * @author moodlemootfr 2014
  */
-class VocabularyCreate extends moodleform {
+class VocabularyCreateForm extends moodleform {
     //Add elements to form
     public function definition() {
         global $CFG;
@@ -98,6 +96,5 @@ class VocabularyCreate extends moodleform {
         }
 
         return $errors;
-     
     }
 }
