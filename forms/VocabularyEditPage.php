@@ -24,21 +24,15 @@
  */
 require_once '../../../config.php';
 
+require_once('./VocabularyEditForm.php');
 
-error_reporting(E_ALL);
-//include simplehtml_form.php
-require_once('./ClassVocabularyCreate.php');
-
-//Instantiate simplehtml_form 
-$mform = new VocabularyCreate();
+$mform = new VocabularyEditForm();
 
 //Form processing and displaying is done here
-if ($mform->is_cancelled()) {
+if ($mform->is_cancelled() ) {
     //Handle form cancel operation, if cancel button is present on form
-} else if ($fromform = $mform->get_data()) {
-  //In this case you process validated data. $mform->get_data() returns data posted in form.
-  var_dump($fromform);
-  echo "ok le form est peuple et correct on va faire la persistance en base";
+    
+} else if ($data = $mform->get_data()) {
   
 } else {
   // this branch is executed if the form is submitted but the data doesn't validate and the form should be redisplayed
