@@ -42,7 +42,7 @@ $string['deleteterm'] = 'Delete';
 $string['modifyterm'] = 'Modify';
 $string['termtitle'] = 'Term';
 $string['parentvocabulary'] = 'Vocabulary';
-$string['term:delete:confirm'] = 'Are you sure you want to delete this term ?'
+$string['term:delete:confirm'] = 'Are you sure you want to delete this term ?';
 
 /*  Errors  */
 
