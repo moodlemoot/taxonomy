@@ -50,5 +50,5 @@ $string['missingvocabularyshortname'] = 'Missing vocabulary shortname in taxonom
 $string['missingtermname'] = 'Missing term name in taxonomy_vocabulary_create().';
 $string['missingtermshortname'] = 'Missing term shortname in taxonomy_vocabulary_create().';
 $string['terms:notfound'] = 'No terms found';
-$string['term:notfound'] = 'Term not founded';
+$string['term:notfound'] = 'Term not found';
 
