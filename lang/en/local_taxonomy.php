@@ -22,7 +22,7 @@ $string['addnewvocabulary'] = 'Add new vocabulary';
 $string['deletevocabulary'] = 'Delete';
 $string['modifyvocabulary'] = 'Modify';
 $string['vocabularytitle'] = 'Vocabulary';
-$string['vocabulary:delete:confirm'] = 'Are you sure you want to delte this vocabulary ?';
+$string['vocabulary:delete:confirm'] = 'Are you sure you want to delete this vocabulary ?';
     
 /*  Terms   */
 
@@ -42,6 +42,7 @@ $string['deleteterm'] = 'Delete';
 $string['modifyterm'] = 'Modify';
 $string['termtitle'] = 'Term';
 $string['parentvocabulary'] = 'Vocabulary';
+$string['term:delete:confirm'] = 'Are you sure you want to delete this term ?'
 
 /*  Errors  */
 
