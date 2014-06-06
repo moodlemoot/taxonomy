@@ -1,9 +1,7 @@
-taxonomy
+Moodle Taxonomy module
 ========
 
-# Moodle Taxonomy module
-
-#Contributeurs
+# Contributeurs
 
  - Bertrand GUYONNET bertrand.guyonnet@ens-lyon.fr
  - Daniel Stoyanov daniel.stoyanov@u-paris10.fr
