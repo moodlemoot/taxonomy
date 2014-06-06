@@ -2,32 +2,24 @@
 
 require_once('../../../config.php');
 require_once('../lib.php');
-    require_login();
+require_login();
     
 $id     = required_param('id', PARAM_INT);              // Vocabulary id.
 $delete = optional_param('delete', '', PARAM_ALPHANUM); // Delete confirmation hash.
-
-    
 $context = context_system::instance();
+
 $PAGE->set_context($context);
-	
-    
 $PAGE->set_url('/local/taxonomy/forms/TermDeletePage.php', array('id' => $id));
 $PAGE->set_pagelayout('standard');
 $PAGE->set_heading(get_string('editterm', 'local_taxonomy'));
-//$PAGE->set_context(get_context_instance(CONTEXT_SYSTEM));
-
 $site = get_site();
-
 
 if (! $term = taxonomy_term_load($id) ) {
     print_error("term:notfound", "local_taxonomy");
 }
-
-$site = get_site();
 $PAGE->set_title($site->fullname);
 $PAGE->navbar->add(get_string('navbartaxonomy', 'local_taxonomy'), new moodle_url('/local/taxonomy/index.php'));
-    $courseshortname = $term->shortname;
+$courseshortname = $term->shortname;
     
 if (! $delete) {
     $strdeletecheck = get_string("deletecheck", "", $term->name);
@@ -37,11 +29,8 @@ if (! $delete) {
     $PAGE->set_title("$site->shortname: $strdeletecheck");
     $PAGE->set_heading($site->fullname);
     echo $OUTPUT->header();
-
-    $message = "$strdeletecoursecheck <br/><br/><b>" . $term->name . "</b>";
-
+    $message = "$strdeletecoursecheck <br/><br/><b style=\"margin-left: 80px;\">" . $term->name . "</b>";
     echo $OUTPUT->confirm($message, "TermDeletePage.php?id=$term->id&delete=".md5($term->shortname), "/local/taxonomy/index.php");
-
     echo $OUTPUT->footer();
     exit;
 }
