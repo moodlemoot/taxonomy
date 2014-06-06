@@ -170,13 +170,7 @@ function taxonomy_term_delete($term) {
 function taxonomy_term_data_load($term_data) {
     global $DB;
 
-    if ( isset($term_data->term_id) ) {
-
-    }
-
-    if ( isset($term_data->instance_id) ) {
-
-    }
+    return $DB->get_record('taxonomy_term_data', array('id' => $term_data->id));
 }
 
 function taxonomy_term_data_add($term_data) {
@@ -202,5 +196,7 @@ function taxonomy_term_data_add($term_data) {
 function taxonomy_term_data_remove($term_data) {
     global $DB;
 
-}
+    $result = $DB->delete_records('taxonomy_term_data', array('id' => $term_data->id));
 
+    return $result;
+}
