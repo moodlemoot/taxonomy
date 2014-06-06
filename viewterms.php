@@ -51,7 +51,7 @@
     }
 	echo html_writer::table($table);
 	
-	$add_new_url = new moodle_url('/local/taxonomy/forms/TermEditPage.php');
+	$add_new_url = new moodle_url("/local/taxonomy/forms/TermEditPage.php?vid=$vid");
 	echo html_writer::link($add_new_url, get_string('addnewterm', 'local_taxonomy'));
         
         
