@@ -1,5 +1,6 @@
 <?php
 
+
 function taxonomy_vocabulary_list() {
     global $DB;
 
