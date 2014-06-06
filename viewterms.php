@@ -2,8 +2,7 @@
 	require('../../config.php');
 	
 	require_login();
-	
-	$id = required_param('id', PARAM_INT); // Vocabulary id.
+	$vid = required_param('id', PARAM_INT); // Vocabulary id.
 	
 	$context = context_system::instance();
     $PAGE->set_context($context);
@@ -25,7 +24,7 @@
 
 	$table->size = array('5%', '35%', '40%', '5%', '10%');
 
-	$records = taxonomy_term_list($id);
+	$records = taxonomy_term_list($vid);
     if (!empty($records)) {
 	foreach ($records as $key => $record)	{
 		$tid = $record->id;
@@ -54,6 +53,8 @@
 	
 	$add_new_url = new moodle_url('/local/taxonomy/forms/TermEditPage.php');
 	echo html_writer::link($add_new_url, get_string('addnewterm', 'local_taxonomy'));
+        
+        
 	
 	echo $OUTPUT->footer();
 ?>
