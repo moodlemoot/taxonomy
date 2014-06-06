@@ -4,9 +4,10 @@
 	require_login();
 	
 	$context = context_system::instance();
-    	$PAGE->set_context($context);	
+    $PAGE->set_context($context);
 	$PAGE->set_url('/local/taxonomy/index.php');
-	
+	$PAGE->navbar->add(get_string('navbartaxonomy','local_taxonomy'),new moodle_url('/local/taxonomy/index.php'));
+    
 	echo $OUTPUT->header();
 	echo $OUTPUT->heading(get_string('vocabularytitle', 'local_taxonomy'));
 		 
