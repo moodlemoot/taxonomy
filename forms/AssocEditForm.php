@@ -72,9 +72,7 @@ class AssocEditForm extends moodleform {
 
         $this->add_action_buttons();
 
-        $mform->addElement('hidden', 'tid', $tid);
-        $mform->setType('tid', PARAM_INT);
-
+        
         $mform->addElement('hidden', 'instanceid', $instanceid);
         $mform->setType('instanceid', PARAM_INT);
 
@@ -95,8 +93,11 @@ class AssocEditForm extends moodleform {
             $pos = strstr($key, "voc_id");
             if ($pos) {
                // echo "found :$key /$value<=> $pos<br>";
-                if ($value > 0) {
-                    $tab_id[] = $value;
+               foreach ($value as $key2 => $value2) {
+                 if ($value2 > 0) {
+                    $tab_id[] = $value2;   
+               }
+               
                 }
             } else {
                // echo " NOT found :$key /$value<br>";
