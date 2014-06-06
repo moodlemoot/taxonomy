@@ -8,4 +8,4 @@ Moodle Taxonomy module
  - Mathieu Parra mathieu.parra@espe-paris.fr
  - Pascal Fautrero pascal.fautrero@ac-versailles.fr
  - Brice Courtin brice.courtin@univ-tours.fr
- - 
+ - BANG sanghun sang-hun.bang@univ-paris8.fr
