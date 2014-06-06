@@ -6,9 +6,9 @@
   <TABLES>
     <TABLE NAME="taxonomy_vocabulary" COMMENT="Defines vocabularies.">
       <FIELDS>
-        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
-        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true"/>
-        <FIELD NAME="shortname" TYPE="char" LENGTH="255" NOTNULL="true"/>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" COMMENT="Vocabulary id."/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" COMMENT="Vocabulary name."/>
+        <FIELD NAME="shortname" TYPE="char" LENGTH="255" NOTNULL="true" COMMENT="Vocabulary shortname."/>
         <FIELD NAME="description" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Vocabulary description."/>
         <FIELD NAME="weight" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The weight of this vocabulary in relation to other vocabularies."/>
       </FIELDS>
@@ -18,10 +18,10 @@
     </TABLE>
     <TABLE NAME="taxonomy_term" COMMENT="Defines terms.">
       <FIELDS>
-        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" COMMENT="Term id."/>
         <FIELD NAME="vid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="The id of the vocabulary to which the term is assigned."/>
-        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true"/>
-        <FIELD NAME="shortname" TYPE="char" LENGTH="255" NOTNULL="true"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" COMMENT="Term name."/>
+        <FIELD NAME="shortname" TYPE="char" LENGTH="255" NOTNULL="true" COMMENT="Term shortname."/>
         <FIELD NAME="description" TYPE="text" NOTNULL="false" COMMENT="Term description."/>
         <FIELD NAME="weight" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The weight of this term in relation to other terms."/>
       </FIELDS>
@@ -29,11 +29,11 @@
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
       </KEYS>
     </TABLE>
-    <TABLE NAME="taxonomy_term_data">
+    <TABLE NAME="taxonomy_term_data" COMMENT="Define taxonomy component associations.">
       <FIELDS>
-        <FIELD NAME="term_id" TYPE="int" LENGTH="10" NOTNULL="true"/>
-        <FIELD NAME="instance_id" TYPE="int" LENGTH="10" NOTNULL="true"/>
-        <FIELD NAME="component" TYPE="char" LENGTH="255" NOTNULL="true"/>
+        <FIELD NAME="term_id" TYPE="int" LENGTH="10" NOTNULL="true" COMMENT="Term id."/>
+        <FIELD NAME="instance_id" TYPE="int" LENGTH="10" NOTNULL="true" COMMENT="Component instance id."/>
+        <FIELD NAME="component" TYPE="char" LENGTH="255" NOTNULL="true" COMMENT="Component type."/>
       </FIELDS>
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="term_id,instance_id"/>
