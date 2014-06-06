@@ -22,7 +22,8 @@ $string['addnewvocabulary'] = 'Add new vocabulary';
 $string['deletevocabulary'] = 'Delete';
 $string['modifyvocabulary'] = 'Modify';
 $string['vocabularytitle'] = 'Vocabulary';
-
+$string['vacabulary:delete:confirm'] = 'Are you sure you want to delte this vocabulary ?';
+    
 /*  Terms   */
 
 $string['eventtermcreated'] = 'Term created';
