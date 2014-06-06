@@ -42,6 +42,7 @@ $string['deleteterm'] = 'Supprimer';
 $string['modifyterm'] = 'Modifier';
 $string['termtitle'] = 'Termes';
 $string['parentvocabulary'] = 'Vocabulaire';
+$string['term:delete:confirm'] = 'Etes-vous sûr de vouloir supprimer cette terme ?';
 
 /* Errors */
 
