@@ -7,10 +7,15 @@ require_once('../lib.php');
 $id     = required_param('id', PARAM_INT);              // Vocabulary id.
 $delete = optional_param('delete', '', PARAM_ALPHANUM); // Delete confirmation hash.
 
+    
+$context = context_system::instance();
+$PAGE->set_context($context);
+	
+    
 $PAGE->set_url('/local/taxonomy/forms/VocabularyDeletePage.php', array('id' => $id));
 $PAGE->set_pagelayout('standard');
 $PAGE->set_heading(get_string('editvocabulary', 'local_taxonomy'));
-$PAGE->set_context(get_context_instance(CONTEXT_SYSTEM));
+//$PAGE->set_context(get_context_instance(CONTEXT_SYSTEM));
 
 $site = get_site();
 
