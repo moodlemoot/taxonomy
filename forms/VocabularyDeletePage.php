@@ -38,7 +38,7 @@ if (! $delete) {
     echo $OUTPUT->header();
 
     $message = "$strdeletecoursecheck<br /><br />" . $vocabulary->name;
-
+    $courseshortname = $vocabulary->shortname;
     echo $OUTPUT->confirm($message, "VocabularyDeletePage.php?id=$vocabulary->id&delete=".md5($vocabulary->shortname), "/local/taxonomy/index.php");
 
     echo $OUTPUT->footer();
