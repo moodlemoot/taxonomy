@@ -60,7 +60,8 @@ class AssocEditForm extends moodleform {
                 $terms[$term->id] = $term->name;
             }
             //   var_dump($terms);
-            $mform->addElement('select', 'voc_id_' . $vocabulary->id, $vocabulary->name, $terms);
+           $myselect =  $mform->addElement('select', 'voc_id_' . $vocabulary->id, $vocabulary->name, $terms);
+           $myselect->setMultiple(true);
             $mform->setType('voc_id_' . $vocabulary->id, PARAM_INT);
             // $mform->addRule('voc'.$vocabulary->id, get_string('error'), 'required');
             //echo "ajout $vocabulary->id : $vocabulary->name";
@@ -103,13 +104,13 @@ class AssocEditForm extends moodleform {
         }
 
 
-        var_dump($data);
+       // var_dump($data);
         var_dump($tab_id);
-        
+        die('stop');
         if (empty($tab_id)){
             $errors['shortname'] = 'please select at least one vocabulary';
             $errors[''] = 'please select at least one vocabulary';
-            // todo repositionner l'erreur au bon endroit
+            // todo repositionner l'erreur au bon endroit dans le formulaire
         }
             
        

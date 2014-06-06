@@ -34,7 +34,7 @@ $vid = optional_param('vid', 0, PARAM_INT); // Vocabulary id.
 
 $PAGE->set_url('/local/taxonomy/forms/TermEditPage.php', array('id' => $id, 'vid' => $vid));
 $PAGE->set_pagelayout('standard');
-$PAGE->set_heading(get_string('editterm', 'local_taxonomy'));
+$PAGE->set_heading('Edit Term');
 
 require_once('./TermEditForm.php');
 
@@ -58,21 +58,21 @@ if ($form->is_cancelled() ) {
         // edit
         $term = taxonomy_term_update($data);
     }
-
-    $url = new moodle_url("$CFG->wwwroot/local/taxonomy/index.php");
+//http://localhost/moodle/local/taxonomy/viewterms.php?id=1
+    $url = new moodle_url("$CFG->wwwroot/local/taxonomy/viewterms.php?id=$vid");
     redirect($url);
 
 } else {
     $site = get_site();
     $PAGE->set_title($site->fullname);
-    $PAGE->navbar->add(get_string('navbartaxonomy', 'local_taxonomy'), new moodle_url('/local/taxonomy/index.php'));
+    $PAGE->navbar->add('Taxonomy', new moodle_url('/local/taxonomy/index.php'));
 
     echo $OUTPUT->header();
 
     if ( empty($term->id) ) {
-        echo $OUTPUT->heading(get_string('createnewterm', 'local_taxonomy'));
+        echo $OUTPUT->heading('Créer un nouveau terme');
     } else {
-        echo $OUTPUT->heading(get_string('modifyterm', 'local_taxonomy') . $term->name);
+        echo $OUTPUT->heading('Modifier le terme ' . $term->name);
     }
 
     $form->display();
