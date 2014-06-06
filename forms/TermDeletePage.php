@@ -38,7 +38,7 @@ if (! $delete) {
     $PAGE->set_heading($site->fullname);
     echo $OUTPUT->header();
 
-    $message = "$strdeletecoursecheck<br /><br />" . $term->name;
+    $message = "$strdeletecoursecheck <br/><br/><b>" . $term->name . "</b>";
 
     echo $OUTPUT->confirm($message, "TermDeletePage.php?id=$term->id&delete=".md5($term->shortname), "/local/taxonomy/index.php");
 
