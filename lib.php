@@ -167,22 +167,40 @@ function taxonomy_term_delete($term) {
     return $result;
 }
 
-function taxonomy_term_add($term_data) {
+function taxonomy_term_data_load($term_data) {
+    global $DB;
+
+    if ( isset($term_data->term_id) ) {
+
+    }
+
+    if ( isset($term_data->instance_id) ) {
+
+    }
+}
+
+function taxonomy_term_data_add($term_data) {
     global $DB;
 
     if ( false === taxonomy_term_load($term_data->term_id)) {
         throw new coding_exception(get_string('term:notfound','local_taxonomy'));
     }
 
-    if(!isset($term_data->instance_id)){
-        throw new coding_exception(get_string('instance:missing','local_taxonomy'));
+    if ( !isset($term_data->instance_id) ) {
+        throw new coding_exception( get_string('instance:missing','local_taxonomy') );
     }
 
-    if(!isset($term_data->component)){
-        throw new coding_exception(get_string('component:missing','local_taxonomy'));
+    if ( !isset($term_data->component) ) {
+        throw new coding_exception( get_string('component:missing','local_taxonomy') );
     }
 
     $term_data->id = $DB->insert_record('taxonomy_term_data', $term_data);
-    
+
     return $term_data->id;
 }
+
+function taxonomy_term_data_remove($term_data) {
+    global $DB;
+
+}
+

@@ -22,6 +22,7 @@ $string['addnewvocabulary'] = 'Ajouter nouveau vocabulaire';
 $string['deletevocabulary'] = 'Supprimer';
 $string['modifyvocabulary'] = 'Modifier';
 $string['vocabularytitle'] = 'Vocabulaire';
+$string['vocabulary:delete:confirm'] = 'Are you sure you want to delete this vocabulary ?';
 
 /*  Terms   */
 
