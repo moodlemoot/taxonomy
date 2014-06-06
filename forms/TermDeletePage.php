@@ -20,7 +20,7 @@ $PAGE->set_heading(get_string('editterm', 'local_taxonomy'));
 $site = get_site();
 
 
-if (! $vocabulary = taxonomy_term_load($id) ) {
+if (! $term = taxonomy_term_load($id) ) {
     print_error("term:notfound", "local_taxonomy");
 }
 
