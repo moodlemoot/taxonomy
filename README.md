@@ -7,3 +7,5 @@ Moodle Taxonomy module
  - Daniel Stoyanov daniel.stoyanov@u-paris10.fr
  - Mathieu Parra mathieu.parra@espe-paris.fr
  - Pascal Fautrero pascal.fautrero@ac-versailles.fr
+ - Brice Courtin brice.courtin@univ-tours.fr
+ - 
