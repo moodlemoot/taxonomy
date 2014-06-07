@@ -48,4 +48,4 @@ $add_new_url = new moodle_url('/local/taxonomy/forms/VocabularyEditPage.php');
 echo html_writer::link($add_new_url, get_string('addnewvocabulary', 'local_taxonomy'));
 
 echo $OUTPUT->footer();
-?>
+
