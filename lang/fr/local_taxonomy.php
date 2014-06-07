@@ -22,7 +22,7 @@ $string['addnewvocabulary'] = 'Ajouter nouveau vocabulaire';
 $string['deletevocabulary'] = 'Supprimer';
 $string['modifyvocabulary'] = 'Modifier';
 $string['vocabularytitle'] = 'Vocabulaire';
-$string['vocabulary:delete:confirm'] = 'Etes-vous sûr de vouloir supprimer cette vocabulaire ?';
+$string['vocabulary:delete:confirm'] = 'Etes-vous sûr de vouloir supprimer ce vocabulaire ?';
 
 /*  Terms   */
 
@@ -42,7 +42,7 @@ $string['deleteterm'] = 'Supprimer';
 $string['modifyterm'] = 'Modifier';
 $string['termtitle'] = 'Termes';
 $string['parentvocabulary'] = 'Vocabulaire';
-$string['term:delete:confirm'] = 'Etes-vous sûr de vouloir supprimer cette terme ?';
+$string['term:delete:confirm'] = 'Etes-vous sûr de vouloir supprimer ce terme ?';
 
 /* Errors */
 
@@ -51,6 +51,6 @@ $string['missingvocabularyshortname'] = 'Nom court de vocabulaire manquant dans 
 $string['missingtermname'] = 'Nom du terme manquant dans taxonomy_vocabulary_create().';
 $string['missingtermshortname'] = 'Nom court du terme manquant dans taxonomy_vocabulary_create().';
 
-$string['terms:notfound']='Aucune terme trouvée';
-$string['term:notfound']='Aucune terme trouvée';
+$string['terms:notfound']='Aucun terme trouvé';
+$string['term:notfound']='Aucun terme trouvé';
 

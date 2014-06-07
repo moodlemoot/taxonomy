@@ -22,7 +22,7 @@ if (! $vocabulary = taxonomy_vocabulary_load($id) ) {
 
 $PAGE->set_title($site->fullname);
 $PAGE->navbar->add(get_string('navbartaxonomy', 'local_taxonomy'), new moodle_url('/local/taxonomy/index.php'));
-$courseshortname = $vocabulary->shortname;
+$vocabularyshortname = $vocabulary->shortname;
 
 if (! $delete) {
         $strdeletecheck = get_string("deletecheck", "", $vocabulary->name);
@@ -48,7 +48,7 @@ if (!confirm_sesskey()) {
 
 // OK checks done, delete the course now.
 
-$strdeletingcourse = get_string("deletingcourse", "", $courseshortname);
+$strdeletingcourse = get_string("deletingcourse", "", $vocabularyshortname);
 
 $PAGE->navbar->add($strdeletingcourse);
 $PAGE->set_title("$site->shortname: $strdeletingcourse");
